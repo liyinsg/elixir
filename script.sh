@@ -44,13 +44,13 @@ get_tags()
 
 list_tags()
 {
-    echo "$tags"
+    echo "$tags" | tac | head -n 1
 }
 
 list_tags_h()
 {
     echo "$tags" |
-    tac |
+    tac | head -n 1 |
     sed -r 's/^(v[0-9])\.([0-9]*)(.*)$/\1 \1.\2 \1.\2\3/'
 }
 
